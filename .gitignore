@@ -33,3 +33,7 @@ phpunit.result.cache
 
 # Docker
 *.local
+
+*.sqlite
+*.sqlite-journal
+uts_db
