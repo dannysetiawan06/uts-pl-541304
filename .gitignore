@@ -1,7 +1,8 @@
 ﻿# Composer vendor
 /vendor/
 # Node modules
-/node_modules/
+node_modules/
+backend/storage/*.key
 # Laravel storage files
 /storage/*.key
 /storage/*.log
@@ -9,13 +10,18 @@
 /storage/framework/sessions/*
 /storage/framework/views/*
 /storage/logs/*
+
+backend/storage/logs/*
+backend/storage/framework/cache/*
+backend/storage/framework/sessions/*
+backend/storage/framework/views/*
+backend/bootstrap/cache/*.php
+
 # Environment files
 .env
 .env.*
 # SQLite DB file (persisted via volume)
-/database/*.sqlite
-# Docker files
-Dockerfile
+backend/database/*.sqlite
 # IDE settings
 /.idea/
 /.vscode/
