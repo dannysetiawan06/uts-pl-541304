@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+  # Backend (Laravel + FrankenPHP) using SQLite persisted via a volume
+  backend:
+    build:
+      context: ./backend
+    image: uts-backend
+    container_name: uts-backend
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - backend-data:/var/www/html/database   # persist SQLite file
+
+  # Frontend (Vue 3 + Nginx)
+  frontend:
+    build:
+      context: ./frontend
+    image: uts-frontend
+    container_name: uts-frontend
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+
+volumes:
+  backend-data:
+    driver: local
+
+networks:
+  default:
+    driver: bridge

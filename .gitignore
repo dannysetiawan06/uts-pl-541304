@@ -1,39 +1,25 @@
-﻿# Environment files
+﻿# Composer vendor
+/vendor/
+# Node modules
+/node_modules/
+# Laravel storage files
+/storage/*.key
+/storage/*.log
+/storage/framework/cache/data/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/logs/*
+# Environment files
 .env
-.env.backup
-.env.production
-*.env
-
-# Dependencies
-node_modules/
-vendor/
-
-# Build outputs
-frontend/dist/
-dist/
-
-# IDE & OS
-.vscode/
-.idea/
+.env.*
+# SQLite DB file (persisted via volume)
+/database/*.sqlite
+# Docker files
+Dockerfile
+# IDE settings
+/.idea/
+/.vscode/
+# macOS
 .DS_Store
+# Windows
 Thumbs.db
-
-# Laravel
-backend/storage/*.key
-backend/storage/logs/
-backend/storage/framework/cache/*
-backend/storage/framework/sessions/*
-backend/storage/framework/views/*
-backend/bootstrap/cache/*
-!backend/storage/framework/cache/.gitignore
-!backend/storage/framework/sessions/.gitignore
-!backend/storage/framework/views/.gitignore
-!backend/bootstrap/cache/.gitignore
-phpunit.result.cache
-
-# Docker
-*.local
-
-*.sqlite
-*.sqlite-journal
-uts_db
